@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#080b12" />
+  <title>SANJID • Hair Strength Journey</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PERSONAL 6-MONTH JOURNEY</div>
+        <h1>SANJID <span>•</span> Hair Tracker</h1>
+        <p>Strong • Dense-looking • Controlled • Healthy</p>
+      </div>
+      <button id="todayBtn" class="icon-btn" title="Jump to today">⌁</button>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div class="hero-copy">
+          <span class="pill">DAY <b id="dayNumber">1</b> / 180</span>
+          <h2>Build better hair, one day at a time.</h2>
+          <p id="journeyText">Start your 6-month consistency journey.</p>
+          <div class="progress-track"><div id="overallProgress" class="progress-fill"></div></div>
+          <small id="progressLabel">0% complete</small>
+        </div>
+        <div class="ring" id="ring"><div><strong id="scoreRing">0</strong><span>today</span></div></div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat card"><span>✅ Complete</span><strong id="completeCount">0</strong></div>
+        <div class="stat card"><span>❌ Missed</span><strong id="missedCount">0</strong></div>
+        <div class="stat card"><span>📵 Not opened</span><strong id="notOpenedCount">0</strong></div>
+        <div class="stat card"><span>📸 Photos</span><strong id="photoCount">0</strong></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><span class="section-kicker">TODAY'S MISSION</span><h2 id="missionTitle">Daily Hair Mission</h2></div>
+          <span class="date-badge" id="todayDate"></span>
+        </div>
+        <div id="missionList" class="mission-list"></div>
+        <div class="check-summary">
+          <span id="missionStatus">0 / 5 completed</span>
+          <button id="completeDayBtn" class="primary">SAVE TODAY →</button>
+        </div>
+      </section>
+
+      <section class="card photo-card">
+        <div class="section-head">
+          <div><span class="section-kicker">DAILY PHOTO + AI REVIEW</span><h2>How did your hair look today?</h2></div>
+          <span class="ai-badge">AI • LOCAL DEMO</span>
+        </div>
+        <p class="muted">Add one progress photo. The site stores it under today's date and gives a visual consistency review. This demo runs locally; real AI vision can be connected later through a secure API.</p>
+        <label class="upload-box" for="photoInput">
+          <input id="photoInput" type="file" accept="image/*" capture="user" />
+          <span class="upload-icon">＋</span>
+          <b>Add today's photo</b>
+          <small>Front / same lighting / similar angle</small>
+        </label>
+        <div id="photoPreview" class="photo-preview hidden"></div>
+        <div id="aiReview" class="ai-review hidden"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><span class="section-kicker">PROGRESS CHART</span><h2>Your consistency</h2></div>
+        </div>
+        <div class="chart-wrap"><canvas id="progressChart" height="220"></canvas></div>
+        <div class="legend">
+          <span>🟢 complete</span><span>🔴 missed</span><span>⚫ not opened</span><span>📸 photo</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><span class="section-kicker">180-DAY CALENDAR</span><h2>Every day</h2></div>
+        </div>
+        <div id="calendar" class="calendar"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><span class="section-kicker">DAILY RECORD</span><h2>What was I doing that day?</h2></div>
+        </div>
+        <p class="muted">Tap a day above to see its checklist, photo, time, AI review and your notes.</p>
+        <div id="dayDetails" class="day-details"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <div><span class="section-kicker">JOURNEY SETTINGS</span><h2>Start date & notes</h2></div>
+        </div>
+        <div class="form-grid">
+          <label>Journey start date<input id="startDate" type="date"></label>
+          <label>Today's note<textarea id="dayNote" rows="3" placeholder="What did I do today? e.g. shampoo, study, slept late..."></textarea></label>
+        </div>
+        <button id="saveNoteBtn" class="secondary">SAVE NOTE</button>
+        <button id="resetBtn" class="danger">RESET ALL LOCAL DATA</button>
+      </section>
+    </main>
+
+    <footer>Made for SANJID • Your data stays in this browser.</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
